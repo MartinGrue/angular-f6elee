@@ -1,0 +1,105 @@
+<hello name="{{ name }}"></hello>
+<p>
+  NGX datatable with Add New Row 
+</p>
+ <ngx-datatable class='material' [rows]='rows'  [scrollbarH]="true" [columnMode]="'force'">
+      <ngx-datatable-column name="Material Code" [width]="120"  [resizeable]="false" [sortable]="false" prop="ITEM_ID">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.ITEM_ID || "--"}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Material Description" [width]="250" [resizeable]="false" [sortable]="false" prop="ITEM_DESCRIPTION">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.ITEM_DESCRIPTION || "--"}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Cat" [width]="100" [resizeable]="false" [sortable]="false" prop="ITEM_CATEGORY">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.ITEM_CATEGORY || "--"}}
+        </ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column name="Batch" [width]="70" [resizeable]="false" [sortable]="false" prop="BATCH_CODE">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.BATCH_CODE || "--"}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Priority" [width]="70" [resizeable]="false" [sortable]="false" prop="MIN_PRIORITY">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.MIN_PRIORITY || "--"}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Available Qty" [width]="100" [resizeable]="false" [sortable]="false" prop="SUM_QTY">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.SUM_QTY || "0"}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Qty" [width]="80" [resizeable]="false" [sortable]="false" prop="qty">
+        <ng-template let-row="row" ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+          {{row.qty}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Scannable" [width]="70" [resizeable]="false" [sortable]="false" prop="scanQty">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.isScannable || "--"}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Scan Qty" [width]="70" [resizeable]="false" [sortable]="false" prop="scanQty">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.scanQty || "--"}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Tube Code" [width]="90" [resizeable]="false" [sortable]="false" prop="TUBE_CODE">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.TUBE_CODE || "--"}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Tube Batch" [width]="90" [resizeable]="false" [sortable]="false" prop="tubeBatch">
+
+        <ng-template let-row="row" ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value">
+          <span >{{row.tubeBatch}} </span>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Tube Qty" [width]="80" [resizeable]="false" [sortable]="false" prop="totalTubeQty">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.totalTubeQty}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Flap Code" [width]="90" [resizeable]="false" [sortable]="false" prop="FLAP_CODE">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.FLAP_CODE || "--"}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Flap Batch" [width]="90" [resizeable]="false" [sortable]="false" prop="flapBatch">
+        <ng-template let-row="row" ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value">
+          <span >{{row.flapBatch}} </span>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Flap Qty" [width]="70" [resizeable]="false" [sortable]="false" prop="totalFlapQty">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.totalFlapQty}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Valve Code" [width]="70" [resizeable]="false" [sortable]="false" prop="VALVE_CODE">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.VALVE_CODE || "--"}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Valve Batch" [width]="70" [resizeable]="false" [sortable]="false" prop="VALVE_DESC">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.VALVE_DESC || "--"}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Valve Qty" [width]="70" [resizeable]="false" [sortable]="false" prop="totalValueQty">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.totalValueQty}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Actions" [width]="70" [resizeable]="false" [sortable]="false" prop="totalValueQty">
+        <ng-template let-row="row" ngx-datatable-cell-template let-rowIndex="rowIndex">
+         <button class="theme-small-button" (click)="split(row,rowIndex)" >
+          add
+         </button>
+        </ng-template>
+      </ngx-datatable-column>
+    </ngx-datatable>
